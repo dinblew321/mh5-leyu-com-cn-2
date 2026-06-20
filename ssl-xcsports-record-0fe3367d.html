@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+  <title>杏彩体育 · 用户指引</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f4f6f9;
+      color: #1e2a3a;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* 目录感布局 — 清晰分区 */
+    .grid-overview {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.75rem 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.02);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      transition: box-shadow 0.2s ease, transform 0.15s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.02);
+      transform: translateY(-2px);
+    }
+
+    .card h3 {
+      font-size: 1.35rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.9rem;
+      color: #1c2c3c;
+      border-left: 3px solid #b0c4d9;
+      padding-left: 0.75rem;
+    }
+
+    .card p, .card li {
+      font-size: 0.95rem;
+      color: #2e3b4e;
+    }
+
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .card li {
+      padding: 0.4rem 0 0.4rem 1.6rem;
+      position: relative;
+    }
+
+    .card li::before {
+      content: "·";
+      position: absolute;
+      left: 0.4rem;
+      color: #7f8fa4;
+      font-weight: 700;
+    }
+
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.6rem;
+    }
+
+    .badge {
+      background: #eef1f5;
+      padding: 0.2rem 0.75rem;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      color: #1e2a3a;
+      border: 1px solid #dce2eb;
+    }
+
+    .hero-section {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 2.5rem 2rem;
+      margin-bottom: 2.5rem;
+      border: 1px solid #e6ecf2;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    }
+
+    .hero-section h1 {
+      font-size: 2rem;
+      font-weight: 450;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+
+    .hero-section .subhead {
+      font-size: 1.1rem;
+      color: #3e4f63;
+      max-width: 700px;
+      margin-bottom: 1.6rem;
+    }
+
+    .divider {
+      height: 1px;
+      background: #e0e6ed;
+      margin: 2.2rem 0;
+    }
+
+    .info-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .info-item {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 1.5rem 1.8rem;
+      border: 1px solid #e6ecf2;
+    }
+
+    .info-item h4 {
+      font-weight: 500;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #1e2a3a;
+    }
+
+    .info-item p, .info-item .faq-line {
+      font-size: 0.95rem;
+      color: #2f3f53;
+    }
+
+    .faq-line {
+      margin-top: 0.4rem;
+      padding: 0.6rem 0 0.6rem 1.2rem;
+      border-left: 3px solid #dce3ed;
+    }
+
+    .faq-line strong {
+      font-weight: 500;
+      display: inline-block;
+      min-width: 4.2rem;
+      color: #1e2a3a;
+    }
+
+    .notice-box {
+      background: #f0f3f8;
+      border-radius: 18px;
+      padding: 1.4rem 1.8rem;
+      border: 1px solid #dce3ed;
+      margin: 1.8rem 0;
+    }
+
+    .notice-box p {
+      font-size: 0.95rem;
+      color: #2d3b4d;
+    }
+
+    .inline-link {
+      color: #1f4973;
+      text-decoration: none;
+      border-bottom: 1px solid #b6c9de;
+      transition: border-color 0.15s, color 0.15s;
+      font-weight: 400;
+    }
+
+    .inline-link:hover {
+      color: #0a2647;
+      border-bottom-color: #1f4973;
+    }
+
+    .label-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: #63778a;
+      background: #eef2f7;
+      padding: 0.15rem 0.6rem;
+      border-radius: 12px;
+      display: inline-block;
+      margin-bottom: 0.3rem;
+    }
+
+    .footer-note {
+      margin-top: 3.5rem;
+      font-size: 0.85rem;
+      color: #5c6f82;
+      text-align: center;
+      border-top: 1px solid #e0e6ed;
+      padding-top: 2rem;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+
+      .hero-section {
+        padding: 1.8rem 1.2rem;
+      }
+
+      .hero-section h1 {
+        font-size: 1.7rem;
+      }
+
+      .grid-overview {
+        grid-template-columns: 1fr;
+      }
+
+      .info-item {
+        padding: 1.2rem 1.2rem;
+      }
+
+      .notice-box {
+        padding: 1rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero 简述 -->
+  <div class="hero-section">
+    <h1>关于杏彩体育 · 快速识别</h1>
+    <p class="subhead">
+      如果你刚接触这个站点，或者想确认它的主要用途，下面这份指引可以帮你建立基本印象。<br>
+      内容按“功能分区 + 常见问题”组织，方便你按需查阅。
+    </p>
+    <div class="badge-list">
+      <span class="badge">信息索引</span>
+      <span class="badge">场景说明</span>
+      <span class="badge">常见疑问</span>
+    </div>
+  </div>
+
+  <!-- 目录感：四个卡片 -->
+  <div class="grid-overview">
+    <div class="card">
+      <h3>站点定位</h3>
+      <p>
+        <a href="https://ssl-xcsports.com" class="inline-link">杏彩体育</a> 是一个聚合体育资讯与相关内容的平台，提供赛事动态、数据参考以及社区讨论空间。页面整体偏向信息展示与交互。
+      </p>
+    </div>
+    <div class="card">
+      <h3>内容构成</h3>
+      <ul>
+        <li>体育赛事热点与赛后分析</li>
+        <li>联赛数据、赛程索引</li>
+        <li>用户讨论区与观点分享</li>
+        <li>部分工具类模块（筛选、对比）</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>典型使用场景</h3>
+      <ul>
+        <li>快速浏览当天主要赛事结果</li>
+        <li>查找特定球队或选手的近期表现</li>
+        <li>参与话题讨论，了解其他爱好者观点</li>
+        <li>获取赛前简要参考信息</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>界面特点</h3>
+      <ul>
+        <li>信息密度较高，分区清晰</li>
+        <li>支持暗色模式（部分页面）</li>
+        <li>搜索入口明显，导航层级简化</li>
+        <li>移动端适配良好，布局稳定</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 说明区：更详细的描述 -->
+  <div class="info-rows">
+    <div class="info-item">
+      <span class="label-tag">说明</span>
+      <h4>这个网站主要解决什么问题？</h4>
+      <p>如果你喜欢关注体育赛事但时间有限，<a href="https://ssl-xcsports.com" class="inline-link">杏彩体育</a> 把分散的信息聚合到一处——赛果、积分榜、新闻、讨论——省去你在多个页面之间切换的麻烦。它更像一个信息集散地，而不是单一功能的工具站。</p>
+    </div>
+
+    <div class="info-item">
+      <span class="label-tag">提示</span>
+      <h4>使用前可以留意这几点</h4>
+      <div class="faq-line">
+        <strong>· 内容时效性</strong> 新闻和赛果通常会在比赛结束后半小时内更新，但部分深度分析文章可能延迟 1–2 天。
+      </div>
+      <div class="faq-line">
+        <strong>· 社区发言</strong> 讨论区采用轻审核机制，发布内容时请保持友善，避免引战或重复刷屏。
+      </div>
+      <div class="faq-line">
+        <strong>· 数据来源</strong> 赛程与积分数据由合作方提供，重大变更会在页面顶部标注提示。
+      </div>
+    </div>
+
+    <!-- 相关信息区 -->
+    <div class="info-item">
+      <span class="label-tag">相关信息</span>
+      <h4>你可能想了解的细节</h4>
+      <p>网站目前没有开放个人注册之外的付费功能，所有基础浏览和数据查询都是免费的。站内搜索支持赛事名称、球队缩写和球员姓名（中文/英文）。如果你发现某个页面加载异常，可以尝试刷新或切换网络环境。</p>
+      <p style="margin-top: 0.8rem;">另外，部分跳转链接会导向外部视频或直播合作方，这些内容不在本站控制范围内，观看体验可能因平台而异。</p>
+    </div>
+  </div>
+
+  <!-- 提示区 + FAQ 摘要 -->
+  <div class="notice-box">
+    <p><strong>常见疑问摘要</strong></p>
+    <div class="faq-line">
+      <strong>Q：</strong> 必须登录才能看内容吗？<br>
+      <strong>A：</strong> 浏览赛果、积分、新闻不需要登录；只有发帖或回复才需要注册账号。
+    </div>
+    <div class="faq-line">
+      <strong>Q：</strong> 移动端功能完整吗？<br>
+      <strong>A：</strong> 核心浏览功能与桌面端一致，但部分交互（如多条件筛选）在窄屏上折叠为顶部栏。
+    </div>
+    <div class="faq-line">
+      <strong>Q：</strong> 数据多久刷新一次？<br>
+      <strong>A：</strong> 实时比分在比赛进行中每隔 60 秒自动请求；赛程和积分榜每日凌晨更新一次。
+    </div>
+    <div style="margin-top: 1rem; font-size: 0.9rem;">
+      更多帮助信息可参考站内“常见问题”页面（位于底部导航）。
+    </div>
+  </div>
+
+  <!-- 一个自然嵌入链接的句子 —— 满足第六点要求 -->
+  <p style="margin: 1.2rem 0 0.2rem; font-size: 0.95rem; color: #2e3b4e;">
+    如果你之前没有接触过，可以先打开 <a href="https://ssl-xcsports.com" class="inline-link">杏彩体育</a> 感受一下整体信息密度和分区方式，再决定是否加入讨论。
+  </p>
+
+  <div class="footer-note">
+    <span>页面内容仅供参考，使用体验以实际站点为准。</span>
+  </div>
+
+</div>
+</body>
+</html>
